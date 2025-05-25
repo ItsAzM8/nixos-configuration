@@ -36,6 +36,7 @@
     extraGroups = [ "wheel" "gamemode" ];
   };
 
+  services.fwupd.enable = true;
   programs.fish.enable = true;
 
   time.timeZone = "Australia/Adelaide";
