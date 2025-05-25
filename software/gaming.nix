@@ -5,9 +5,6 @@
     protonup # Install / Manage Proton-GE & Luxtorpeda for Steam  
   ];
 
-  systemd.packages = with pkgs; [ lact ];
-  systemd.services.lactd.wantedBy = [ "multi-user.target" ];
-
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
