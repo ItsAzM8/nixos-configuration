@@ -28,6 +28,7 @@
     bluetooth.powerOnBoot = true;
     graphics.enable = true;
     graphics.enable32Bit = true;
+    keyboard.qmk.enable = true;
   };
 
   users.users.darcy = {
@@ -37,6 +38,7 @@
   };
 
   services.fwupd.enable = true;
+  services.udev.packages = [ pkgs.via ];
   programs.fish.enable = true;
 
   time.timeZone = "Australia/Adelaide";

@@ -7,6 +7,7 @@
     vscode
     git
     rar
+    via
   ];
 
   fonts.packages = with pkgs; [
