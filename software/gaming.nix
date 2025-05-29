@@ -16,7 +16,7 @@
   };
   programs.gamemode.enable = true;
   programs.gamemode.settings = {
-    general.renice = 10;
+    general.renice = 20;
   };
 
   environment.sessionVariables = {
