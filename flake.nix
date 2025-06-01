@@ -19,7 +19,7 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.darcy-pc = nixpkgs.lib.nixosSystem {
       modules = [
         ./system
         ./software

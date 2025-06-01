@@ -19,7 +19,7 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "darcy-pc";
     networkmanager.enable = true;
   };
 
