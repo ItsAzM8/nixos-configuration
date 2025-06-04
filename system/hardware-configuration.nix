@@ -12,18 +12,18 @@
   boot.kernelParams = [ "amd_pstate=guided" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/09f36bd5-9f0f-40b3-acf1-5bafdb10ea34";
+    { device = "/dev/disk/by-uuid/b92dcbf5-c67a-4505-847d-33fbf250df15";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5814-9D51";
+    { device = "/dev/disk/by-uuid/4F0C-A664";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/6f9265e1-3bed-4d8f-8d38-9134e4798a0c"; }
+    [ { device = "/dev/disk/by-uuid/3d7ec852-a5b7-46d1-ac8d-4e1b9eeb73b5"; }
     ];
 
   networking.useDHCP = lib.mkDefault true;
