@@ -1,5 +1,4 @@
 { pkgs, lib, fetchFromGitHub, fetchFromGitLab, ... }:
-
 {
   nixpkgs.overlays = [
     (self: super: {
@@ -15,17 +14,37 @@
       };
 
       mesa = super.mesa.overrideAttrs rec {
-        version = "25.1.1";
+        version = "25.2.0-devel";
         src = pkgs.fetchFromGitLab {
           domain = "gitlab.freedesktop.org";
-          owner = "mesa";
+          owner = "DadSchoorse";
           repo = "mesa";
-          rev = "messuda-${version}";
-          hash = "sha256-Vk5sE7D8XHDOtxq0ax2a3FmQFWp7IDP4Y510EpnKWo4=";
+          rev = "radv-float8-hack3";
+          hash = "sha256-2ZZZpZkCDey9hvrV3++NlDVrMNMJg8PBWJk43dh33xo=";
         };
         patches = [
           ./opencl.patch
         ];
+        postPatch =
+        let 
+          rustc-hash = self.fetchCrate { 
+            pname = "rustc-hash";
+            version = "2.1.1";
+            hash = "sha256-3rQidUAExJ19STn7RtKNIpZrQUne2VVH7B1IO5UY91k=";
+          };
+        in super.mesa.postPatch + ''
+          cp -R --no-preserve=mode,ownership ${rustc-hash} subprojects/${rustc-hash.pname}-${rustc-hash.version}
+          cp -R subprojects/packagefiles/${rustc-hash.pname}/* subprojects/${rustc-hash.pname}-${rustc-hash.version}/
+        '';
+      };
+
+      directx-headers = super.directx-headers.overrideAttrs rec {
+        src = pkgs.fetchFromGitHub {
+          owner = "microsoft";
+          repo = "DirectX-Headers";
+          rev = "v1.614.1";
+          hash = "sha256-CDmzKdV40EExLpOHPAUnytqG9x1+IGW4AZldfYs5YJk=";
+        };
       };
     })
   ];

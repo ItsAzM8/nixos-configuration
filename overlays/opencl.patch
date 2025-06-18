@@ -1,21 +1,21 @@
 diff --git a/meson.build b/meson.build
-index 58194e73b1f..3c1ab0b533e 100644
+index 0a3bc42a3a1..565d5b1c9cd 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -1877,7 +1877,7 @@ endif
+@@ -1850,7 +1850,7 @@ endif
  
  dep_clang = null_dep
- if with_clc or with_gallium_clover
+ if with_clc
 -  llvm_libdir = dep_llvm.get_variable(cmake : 'LLVM_LIBRARY_DIR', configtool: 'libdir')
 +  llvm_libdir = get_option('clang-libdir')
  
    dep_clang = cpp.find_library('clang-cpp', dirs : llvm_libdir, required : false)
  
 diff --git a/meson.options b/meson.options
-index 06ff1b24bd7..b831f6065a7 100644
+index e6c9567ade8..42285323882 100644
 --- a/meson.options
 +++ b/meson.options
-@@ -778,6 +778,13 @@ option(
+@@ -769,6 +769,13 @@ option(
    ],
  )
  
