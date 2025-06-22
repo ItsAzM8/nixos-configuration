@@ -8,6 +8,9 @@
     git
     rar
     via
+    discord
+    shadps4
+    bblauncher
   ];
 
   fonts.packages = with pkgs; [

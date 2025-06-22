@@ -46,6 +46,28 @@
           hash = "sha256-CDmzKdV40EExLpOHPAUnytqG9x1+IGW4AZldfYs5YJk=";
         };
       };
+
+      bblauncher = pkgs.stdenv.mkDerivation rec {
+        pname = "bblauncher";
+        version = "8.6";
+
+        src = pkgs.fetchFromGitHub rec {
+          owner = "rainmakerv3";
+          repo = "BB_Launcher";
+          tag = "Release${version}";
+          hash = "sha256-Z2g/zxLtN9C63xSiuxcXHAV5SEYs8Ur8psotj0xIJFU=";
+        };
+
+        buildInputs = with pkgs; [
+          qt6.qtbase
+        ];
+
+        nativeBuildInputs = with pkgs; [
+          cmake
+          qt6.wrapQtAppsHook
+        ];
+
+      };
     })
   ];
 }
