@@ -21,6 +21,7 @@
   networking = {
     hostName = "darcy-pc";
     networkmanager.enable = true;
+    firewall.allowedTCPPorts = [ 8096 ];
   };
 
   hardware = {

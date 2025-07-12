@@ -22,4 +22,6 @@
   environment.sessionVariables = {
    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
+
+  hardware.xone.enable = true;
 }

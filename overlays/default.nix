@@ -2,6 +2,7 @@
 {
   nixpkgs.overlays = [
     (self: super: {
+
       gamescope = super.gamescope.overrideAttrs rec {
         version = "15e0c638d16498f0fa00a13ce6f99559225c6584";
         src = pkgs.fetchFromGitHub {
@@ -14,37 +15,17 @@
       };
 
       mesa = super.mesa.overrideAttrs rec {
-        version = "25.2.0-devel";
+        version = "25.1";
         src = pkgs.fetchFromGitLab {
           domain = "gitlab.freedesktop.org";
-          owner = "DadSchoorse";
+          owner = "mesa";
           repo = "mesa";
-          rev = "radv-float8-hack3";
-          hash = "sha256-2ZZZpZkCDey9hvrV3++NlDVrMNMJg8PBWJk43dh33xo=";
+          rev = "${version}";
+          hash = "sha256-sLdrB9Nfi0XJKZi1OORNXQUO9FeZ+WhbPJw+LJpgKSw=";
         };
         patches = [
           ./opencl.patch
         ];
-        postPatch =
-        let 
-          rustc-hash = self.fetchCrate { 
-            pname = "rustc-hash";
-            version = "2.1.1";
-            hash = "sha256-3rQidUAExJ19STn7RtKNIpZrQUne2VVH7B1IO5UY91k=";
-          };
-        in super.mesa.postPatch + ''
-          cp -R --no-preserve=mode,ownership ${rustc-hash} subprojects/${rustc-hash.pname}-${rustc-hash.version}
-          cp -R subprojects/packagefiles/${rustc-hash.pname}/* subprojects/${rustc-hash.pname}-${rustc-hash.version}/
-        '';
-      };
-
-      directx-headers = super.directx-headers.overrideAttrs rec {
-        src = pkgs.fetchFromGitHub {
-          owner = "microsoft";
-          repo = "DirectX-Headers";
-          rev = "v1.614.1";
-          hash = "sha256-CDmzKdV40EExLpOHPAUnytqG9x1+IGW4AZldfYs5YJk=";
-        };
       };
 
       bblauncher = pkgs.stdenv.mkDerivation rec {
