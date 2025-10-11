@@ -9,8 +9,8 @@
     rar
     via
     discord
-    shadps4
-    bblauncher
+    libreoffice
+    hunspell
   ];
 
   fonts.packages = with pkgs; [

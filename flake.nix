@@ -23,7 +23,6 @@
       modules = [
         ./system
         ./software
-        ./overlays
         home-manager.nixosModules.home-manager
       ];
     };

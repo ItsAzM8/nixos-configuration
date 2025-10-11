@@ -15,7 +15,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_6_15;
+    kernelPackages = pkgs.linuxPackages_6_17;
   };
 
   networking = {
@@ -38,9 +38,14 @@
     extraGroups = [ "wheel" "gamemode" ];
   };
 
+  users.users.dyllan = {
+    isNormalUser = true;
+  };
+
   services.fwupd.enable = true;
   services.udev.packages = [ pkgs.via ];
   programs.fish.enable = true;
+  programs.nix-ld.enable = true;
 
   time.timeZone = "Australia/Adelaide";
   nixpkgs.config.allowUnfree = true;
