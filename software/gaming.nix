@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     mangohud # Vulkan / OpenGL Overlay for System Monitoring and FPS
-    protonup # Install / Manage Proton-GE & Luxtorpeda for Steam
+    protonup-ng # Install / Manage Proton-GE & Luxtorpeda for Steam
   ];
 
   programs.steam = {
