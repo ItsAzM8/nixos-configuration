@@ -47,6 +47,12 @@
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
 
+  programs.nh = {
+    enable = true;
+    flake = "/home/darcy/git/nixos-configuration";
+    clean.enable = true;
+  };
+
   time.timeZone = "Australia/Adelaide";
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.05";
