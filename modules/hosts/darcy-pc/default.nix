@@ -108,7 +108,6 @@
         };
 
       programs = {
-        direnv.enable = true;
         nix-ld.enable = true;
         fish.enable = true;
         firefox.enable = true;
@@ -134,6 +133,13 @@
         gamemode = {
           enable = true;
           settings.general.renice = 20;
+        };
+
+        direnv = {
+          enable = true;
+          settings = {
+            log_filter = "^$";
+          };
         };
       };
 
