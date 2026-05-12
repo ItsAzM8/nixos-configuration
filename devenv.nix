@@ -7,20 +7,32 @@
 }:
 
 {
-  packages = with pkgs; [
-    nixfmt-tree
-  ];
-
   scripts = {
     nixfmt = {
       description = "Runs treefmt over all .nix files in the repo, excluding devenv.nix.";
-      packages =
+      exec = "treefmt .";
 
-        with pkgs; [
+      packages = with pkgs; [
+        nixfmt-tree
+      ];
+    };
 
-          nixfmt-tree
-        ];
-      exec = "treefmt modules/ flake.nix";
+    nixbuild = {
+      description = "Builds the NixOS configuration using `nh`.";
+      exec = "nh os build --accept-flake-config";
+
+      packages = with pkgs; [
+        nh
+      ];
+    };
+
+    nixswitch = {
+      description = "Builds the NixOS configuration using `nh` and switches the system to it.";
+      exec = "nh os switch --accept-flake-config";
+
+      packages = with pkgs; [
+        nh
+      ];
     };
   };
 
