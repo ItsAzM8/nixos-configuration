@@ -79,6 +79,7 @@
           via
           discord
           libreoffice
+          bottom
         ];
 
         plasma6.excludePackages = with pkgs.kdePackages; [
