@@ -19,7 +19,7 @@
       nix = {
         settings = {
           trusted-users = [ "darcy" ];
-          experimentalFeatures = [
+          experimental-features = [
             "nix-command"
             "flakes"
           ];
