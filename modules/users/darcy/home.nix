@@ -10,9 +10,12 @@
       home-manager.backupFileExtension = "bak";
 
       home-manager.users.darcy = {
-        programs.fish.interactiveShellInit = ''
-          set fish_greeting
-        '';
+        programs.fish = {
+          enable = true;
+          interactiveShellInit = ''
+            set fish_greeting
+          '';
+        };
 
         programs.starship = {
           enable = true;
