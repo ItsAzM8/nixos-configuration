@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "jnoortheen.nix-ide",
+        "datakurre.devenv",
+        "tamasfe.even-better-toml",
+        "bbenoist.nix"
+    ]
+}
