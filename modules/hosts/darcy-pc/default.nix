@@ -29,23 +29,19 @@
         xone.enable = true;
       };
 
-      services =
-        let
-          jellyfinGroup = "jellyfin";
-        in
-        {
-          desktopManager.plasma6.enable = true;
-          udev.packages = [ pkgs.via ];
+      services = {
+        desktopManager.plasma6.enable = true;
+        udev.packages = [ pkgs.via ];
 
-          displayManager = {
-            defaultSession = "plasma";
+        displayManager = {
+          defaultSession = "plasma";
 
-            sddm = {
-              enable = true;
-              wayland.enable = true;
-            };
+          sddm = {
+            enable = true;
+            wayland.enable = true;
           };
         };
+      };
 
       programs = {
         nix-ld.enable = true;
