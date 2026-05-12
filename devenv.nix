@@ -1,12 +1,14 @@
 {
   pkgs,
-  lib,
-  config,
-  inputs,
   ...
 }:
 
 {
+  languages.nix = {
+    enable = true;
+    lsp.package = pkgs.nil;
+  };
+
   scripts = {
     nixfmt = {
       description = "Runs treefmt over all .nix files in the repo, excluding devenv.nix.";
