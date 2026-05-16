@@ -29,6 +29,10 @@
           vimAlias = true;
         };
 
+        programs.vscode = {
+          enable = true;
+        };
+
         home.stateVersion = "25.11";
         home.homeDirectory = "/home/darcy";
       };

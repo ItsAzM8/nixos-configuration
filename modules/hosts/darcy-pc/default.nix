@@ -44,8 +44,6 @@
       };
 
       programs = {
-        nix-ld.enable = true;
-
         firefox.enable = true;
         xwayland.enable = true;
 
@@ -75,7 +73,6 @@
           kdePackages.kcalc
           signal-desktop
           corectrl
-          vscode
           via
           discord
           libreoffice
