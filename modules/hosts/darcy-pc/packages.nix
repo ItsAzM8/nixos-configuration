@@ -1,10 +1,11 @@
 { ... }:
 {
-  flake.nixsoModules.darcyPcPackages =
+  flake.nixosModules.darcyPcPackages =
     {
       pkgs,
+      ...
     }:
     {
-      environment.systemPackages = [ ];
+      environment.systemPackages = with pkgs; [ sops ];
     };
 }

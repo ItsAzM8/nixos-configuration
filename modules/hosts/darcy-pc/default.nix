@@ -1,4 +1,7 @@
 { inputs, self, ... }:
+let
+  sopsFile = ../../../secrets/secrets.yaml;
+in
 {
 
   flake.nixosConfigurations.darcy-pc = inputs.nixpkgs.lib.nixosSystem {
@@ -15,7 +18,16 @@
         nixosModules.darcy-pc-hardware-configuration
         nixosModules.darcy-module
         nixosModules.dyllan-module
+        nixosModules.arrStack
+        nixosModules.openvpn
+
+        inputs.sops-nix.nixosModules.default
       ];
+
+      sops.defaultSopsFile = sopsFile;
+      sops.defaultSopsFormat = "yaml";
+      sops.age.keyFile = "/home/darcy/.config/sops/age/keys.txt";
+      sops.secrets.pia_env = { };
 
       networking = {
         hostName = "darcy-pc";

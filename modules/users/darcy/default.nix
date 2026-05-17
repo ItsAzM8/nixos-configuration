@@ -5,6 +5,7 @@
     {
       imports = [
         self.nixosModules.darcy-home-manager
+        self.nixosModules.darcyPcPackages
       ];
 
       users.users.darcy = {
