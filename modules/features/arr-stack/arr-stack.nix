@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nixosModules.arrStack =
+  flake.features.arrStack =
     {
       config,
       ...

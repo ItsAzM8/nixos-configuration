@@ -18,8 +18,9 @@ in
         nixosModules.darcy-pc-hardware-configuration
         nixosModules.darcy-module
         nixosModules.dyllan-module
-        nixosModules.arrStack
-        nixosModules.openvpn
+
+        features.arrStack
+        features.openvpn
 
         inputs.sops-nix.nixosModules.default
       ];
