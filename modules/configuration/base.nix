@@ -44,17 +44,11 @@
 
       programs = {
         fish.enable = true;
+        direnv.enable = true;
 
         nh = {
           enable = true;
           clean.enable = true;
-        };
-
-        direnv = {
-          enable = true;
-          settings = {
-            log_filter = "^$";
-          };
         };
       };
 
