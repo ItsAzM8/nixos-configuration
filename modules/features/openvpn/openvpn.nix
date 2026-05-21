@@ -4,7 +4,7 @@ let
 in
 
 {
-  flake.features.openvpn = {
+  flake.nixosModules.openvpn = {
     services.openvpn.servers = {
       pia = {
         autoStart = true;

@@ -14,13 +14,16 @@ in
     { pkgs, config, ... }:
     {
       imports = with self; [
+        # Configuration modules
         nixosModules.base
         nixosModules.darcy-pc-hardware-configuration
         nixosModules.darcy-module
         nixosModules.dyllan-module
 
-        features.arrStack
-        features.openvpn
+        # Feature modules
+        nixosModules.arrStack
+        nixosModules.openvpn
+        nixosModules.gaming
 
         inputs.sops-nix.nixosModules.default
       ];
