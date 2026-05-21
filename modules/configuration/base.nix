@@ -61,6 +61,6 @@
       security.rtkit.enable = true;
       networking.networkmanager.enable = true;
       time.timeZone = "Australia/Adelaide";
-      system.stateVersion = "25.11";
+      system.stateVersion = "26.05";
     };
 }

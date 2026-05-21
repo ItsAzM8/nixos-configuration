@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.features.arrStack =
+  flake.nixosModules.arrStack =
     {
       config,
       ...
@@ -10,7 +10,7 @@
         enable = true;
       };
 
-      services.jellyseerr = {
+      services.seerr = {
         enable = true;
       };
 
