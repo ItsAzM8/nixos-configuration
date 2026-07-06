@@ -37,7 +37,7 @@
       };
 
       services.deluge = {
-        enable = true;
+        enable = false;
         group = config.services.jellyfin.group;
         user = config.services.jellyfin.user;
         web.enable = true;
