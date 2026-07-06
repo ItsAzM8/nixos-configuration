@@ -21,8 +21,8 @@ in
         nixosModules.dyllan-module
 
         # Feature modules
-        nixosModules.arrStack
-        nixosModules.openvpn
+        # nixosModules.arrStack
+        # nixosModules.openvpn
         nixosModules.gaming
 
         inputs.sops-nix.nixosModules.default
