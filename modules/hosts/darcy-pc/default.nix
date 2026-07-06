@@ -75,6 +75,8 @@ in
           discord
           libreoffice
           bottom
+          dotnet-sdk_8
+          jetbrains.rider
         ];
 
         plasma6.excludePackages = with pkgs.kdePackages; [
