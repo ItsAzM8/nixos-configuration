@@ -4,9 +4,17 @@
     { pkgs, ... }:
     {
       imports = [
-        self.nixosModules.darcy-home-manager
+        self.nixosModules.shellConfig
         self.nixosModules.darcyPcPackages
       ];
+
+      programs.neovim = {
+        enable = true;
+        viAlias = true;
+        vimAlias = true;
+      };
+
+      programs.vscode.enable = true;
 
       users.users.darcy = {
         isNormalUser = true;
