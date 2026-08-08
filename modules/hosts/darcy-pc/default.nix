@@ -69,6 +69,7 @@ in
           vulkan-tools
           kdePackages.kde-gtk-config
           kdePackages.kcalc
+          kdePackages.isoimagewriter
           signal-desktop
           corectrl
           via
